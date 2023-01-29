@@ -2,7 +2,7 @@
 const MONGOPASSWORD = process.env.MONGOPASSWORD;
 const MONGOUSER = process.env.MONGOUSER;
 const MONGOHOST = process.env.MONGOHOST;
-
+const MONGOPORT = process.env.MONGOPORT;
 // express and mongoose 
 const express = require("express");
 const bodyParse =  require("body-parser");
