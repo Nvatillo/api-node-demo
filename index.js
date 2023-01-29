@@ -11,11 +11,11 @@ app.get("/", (req,res) => {
     res.status(200).send("listo papurro")
 });
 
-app.get("saludo",(req , res) => {
+app.get("/saludo",(req , res) => {
     res.status(200).send("hola");
 })
 
-app.post("adios",(req,res) => {
+app.post("/adios",(req,res) => {
     const { nombre } = req.body;
     res.status(200).send(`adios ${nombre}`)
 })
