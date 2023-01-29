@@ -2,7 +2,7 @@ const MONGO_URL = process.env.MONGO_URL;
 const MONGOPASSWORD = process.env.MONGOPASSWORD;
 const MONGOUSER = process.env.MONGOUSER;
 const MONGOHOST = process.env.MONGOHOST;
-const {MongoClient, CURSOR_FLAGS} = require('mongodb');
+const {MongoClient} = require('mongodb');
 
 const express = require("express");
 const bodyParse =  require("body-parser");
@@ -47,13 +47,5 @@ async function connect(){
 }
 connect().catch(console.error);
 
-async function listDatabases(client){
-    databasesList = await client.db("test");
- 
-    console.log("Databases:" + databasesList);
-};
-
-listDatabases();
- 
 
  
