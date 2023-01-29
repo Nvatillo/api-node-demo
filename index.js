@@ -1,11 +1,12 @@
 const MONGO_URL = process.env.MONGO_URL;
 const MONGOPASSWORD = process.env.MONGOPASSWORD;
 const MONGOUSER = process.env.MONGOUSER;
+const MONGOHOST = process.env.MONGOHOST;
 const {MongoClient, CURSOR_FLAGS} = require('mongodb');
 
 const express = require("express");
 const bodyParse =  require("body-parser");
-const uri = `mongodb+srv://${MONGOUSER}:${MONGOPASSWORD}@${MONGO_URL}/test?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${MONGOUSER}:${MONGOPASSWORD}@${MONGOHOST}/test?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 
 const app = express();
