@@ -1,12 +1,12 @@
 const MONGOHOST = process.env.MONGOHOST;
 const MONGOPASSWORD = process.env.MONGOPASSWORD;
 const MONGOPORT = process.env.MONGOHOST;
+const MONGOUSER = process.env.MONGOUSER;
 const mongoose = require("mongoose");
-
 
 // config and connection bd 
 mongoose.set("strictQuery", false);
-mongoose.connect(`mongodb://mongo:${MONGOPASSWORD}@${MONGOHOST}:${MONGOPORT}`, {
+mongoose.connect(`mongodb://${{ MONGOUSER }}:${{ MONGOPASSWORD }}@${{ MONGOHOST }}:${{ MONGOPORT }}`, {
    useNewUrlParser: true,
    useUnifiedTopology: true,
 });
