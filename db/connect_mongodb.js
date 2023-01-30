@@ -1,6 +1,6 @@
-const MONGOHOST = process.env.MONGOHOST || "containers-us-west-132.railway.app";
-const MONGOPASSWORD = process.env.MONGOPASSWORD || "p1VsqDxSz4JfkgfOIJ9y";
-const MONGOPORT = process.env.MONGOHOST || 7650;
+const MONGOHOST = process.env.MONGOHOST;
+const MONGOPASSWORD = process.env.MONGOPASSWORD;
+const MONGOPORT = process.env.MONGOHOST;
 const mongoose = require("mongoose");
 
 
