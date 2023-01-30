@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 // config and connection bd 
 mongoose.set("strictQuery", false);
-mongoose.connect(`mongodb://mongo:${MONGOPASSWORD}@${MONGOHOST}:${MONGOPORT}`, {
+mongoose.connect(`mongodb://mongo:p1VsqDxSz4JfkgfOIJ9y@containers-us-west-132.railway.app:7650`, {
    useNewUrlParser: true,
    useUnifiedTopology: true,
 });
