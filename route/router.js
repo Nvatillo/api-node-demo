@@ -4,9 +4,21 @@ const topic = require('../db/connect_mongodb')
 
 
 
-router.get("/topic",async (req,res) =>{
+router.get("/api/v1/topics",async (req,res) =>{
     let listTopic = await topic.find();
-    listTopic.sort(function (a, b) {
+    let topicsBd = []
+    let response = [];
+    
+    listTopic.forEach(x => topicsBd.push({
+      "id" : x.id,
+      "name" : x.name,
+    }))
+    
+    let otros = topicsBd.find(x => x.name == "Otros");
+    
+    response = topicsBd.filter(x => x.name !== "Otros");
+   
+    response.sort(function (a, b) {
         if (a.name > b.name) {
           return 1;
         }
@@ -15,7 +27,10 @@ router.get("/topic",async (req,res) =>{
         }
         return 0;
       });
-    res.send(listTopic);
+
+    response.push(otros)
+
+    res.send(response);
 })
 
 module.exports = router;
