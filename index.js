@@ -10,10 +10,7 @@ const cors = require("cors");
 app.use(bodyParse.urlencoded({extended: true}));
 app.use(bodyParse.json());
 app.use("/" , require('./route/router'));
-app.use(cors({
-    origin: '*',
-    optionsSuccessStatus: 200
-  }));
+app.use(cors());
 
 app.listen(PORT, () =>{
     console.log(`tu puerto esta listo en ${PORT}`)
