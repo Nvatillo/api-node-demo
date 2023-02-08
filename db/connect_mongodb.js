@@ -18,13 +18,56 @@ var topicEntity = {
 }
 
 var parnetsEntity = {
-  "name": "",
-  "topics": [],
-  "description": "",
-  "avatar": "",
-  "banner": ""
-}
-
+   "id": "",
+   "name": "",
+   "topic": [],
+   "avatar": "",
+   "banner": "",
+   "description": "",
+   "tcito_value": "",
+   "social media": [
+     {
+       "type": "",
+       "url": ""
+     },
+     ],
+   "memberships": [
+     {
+       "id": "",
+       "name": "",
+       "cost": "",
+       "description": ""
+     }
+   ],
+   "gallery": [
+     {
+       "id": "",
+       "name": "",
+       "description": "",
+       "source": [
+         {
+           "id": "",
+           "type": "",
+           "url": ""
+         }
+       ],
+       "is_public": false,
+       "memberships_suscriptions": ""
+     }
+   ],
+   "payment_post": [
+     {
+       "name": "",
+       "message": ""
+     }
+   ],
+   "top_donations": [
+     {
+       "name": "",
+       "count": ""
+     }
+   ]
+ }
  // model and entity
  const topic = mongoose.model("topic", topicEntity);
  const parnets = mongoose.model("parnets",parnetsEntity)

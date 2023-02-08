@@ -39,17 +39,27 @@ router.get("/api/v1/parnets", async (req,res) => {
   let limit = req.query.limit;
 
   let list = await parnets.find().skip(offset).limit(limit);
-  
+
   let parnetsBd = []
   list.forEach(x => parnetsBd.push({
     "name": x.name,
-    "topics": x.topics,
+    "topic": x.topic,
     "description": x.description,
     "avatar": x.avatar,
     "banner": x.banner
   }))
 
   res.status(200).send(parnetsBd)
+})
+
+router.get("/api/v1/partner", async (req,res) => {
+  let id = req.query.id;
+
+
+  let parnet = await parnets.findById({"_id":id}) 
+
+
+  res.status(200).send(parnet)
 })
 
 module.exports = router;
