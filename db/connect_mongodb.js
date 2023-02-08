@@ -11,14 +11,22 @@ mongoose.connect(`mongodb://mongo:p1VsqDxSz4JfkgfOIJ9y@containers-us-west-132.ra
    useUnifiedTopology: true,
 });
 
-var topicDto = {
+var topicEntity = {
    id : 0,
    name : "",
    url : ""
 }
 
+var parnetsEntity = {
+  "name": "",
+  "topics": [],
+  "description": "",
+  "avatar": "",
+  "banner": ""
+}
+
  // model and entity
- const topic = mongoose.model("topic", topicDto);
+ const topic = mongoose.model("topic", topicEntity);
+ const parnets = mongoose.model("parnets",parnetsEntity)
 
-
- module.exports = topic;
+ module.exports = {topic,parnets};
